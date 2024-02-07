@@ -1,4 +1,4 @@
-#include "CActions.h"
+﻿#include "CActions.h"
 
 CActions::CActions()
 {
@@ -838,7 +838,7 @@ unsigned short CActions::Pass(CTeam& team1, CTeam& team2)
 }
 unsigned short CActions::Dribble(CTeam& team1, CTeam& team2)
 {
-	randNum = rand() % 10 + 0; // choosing a player
+	randNum = randNumGenerator(10); // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
 	switch (Ball)
@@ -1183,44 +1183,304 @@ unsigned short CActions::Dribble(CTeam& team1, CTeam& team2)
 	}
 	return 0;
 }
-//TODO
 unsigned short CActions::Crossing(CTeam& team1, CTeam& team2)
 {
-	randNum = rand() % 10 + 0; // choosing a player
+	randNum = randNumGenerator(10); // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
+
 	switch (Ball)
 	{
 	case 0:
-
+		if (PositionOfBall() == 1)
+		{
+			playerAwayTeam = team2.getDeffenderPlayer();
+			// deffender vs deffenders
+			if (randNum > 1 && randNum < 5) // deffender vs deffender
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home deffender! over away deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home deffender great work for away deffender";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) // mid vs deffender
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home midfielder! over away deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home midfilder great work for away deffender";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) // attacker vs deffender
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home attacker! over away deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home attacker great work for away deffender";
+				}
+			}
+		}
+		else if (PositionOfBall() == 2)
+		{
+			playerAwayTeam = team2.getMidPlayer();
+			if (randNum > 1 && randNum < 5) // deffnder vs mid
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home Deffender over away midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home deffender great work by away midfielder!";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) // mid vs mid
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home midfielder over away midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home midfielder great work by away midfielder!";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) //attacker vs mid
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home attacker over away midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home attacker great work by away midfielder!";
+				}
+			}
+		}
+		else if (PositionOfBall() == 3)
+		{
+			playerAwayTeam = team2.getAttacker();
+			if (randNum > 1 && randNum < 5) // deffender vs attacker
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home Deffender over away midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home deffender great work by away midfielder!";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) //mid vs attacker
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home midfielder over away attacker!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home midfielder great work by away attacker!";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) // attacker vs attacker
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (0.5 * (playerHomeTeam->getPositionStats().getStrength() + playerHomeTeam->getPositionStats().getCrossing() + playerHomeTeam->getPositionStats().getVision() /
+					(playerAwayTeam->getPositionStats().getStandTackle() + playerAwayTeam->getPositionStats().getVision()
+						+ playerAwayTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by home attacker over away attacker!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by home deffender great work by away attacker";
+				}
+			}
+		}
 		break;
 	case 1:
-
+		if (PositionOfBall() == 1)
+		{
+			playerHomeTeam = team1.getDeffenderPlayer();
+			// deffender vs deffenders
+			if (randNum > 1 && randNum < 5) // deffender vs deffender
+			{
+				playerAwayTeam = team1.getDeffenderPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away deffender! over home deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away deffender great work for home deffender";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) // mid vs deffender
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away midfielder! over home deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away midfilder great work for home deffender";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) // attacker vs deffender
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away attacker! over home deffender";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away attacker great work for home deffender";
+				}
+			}
+		}
+		else if (PositionOfBall() == 2)
+		{
+			playerHomeTeam = team1.getMidPlayer();
+			if (randNum > 1 && randNum < 5) // deffnder vs mid
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away Deffender over home midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away deffender great work by home midfielder!";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) // mid vs mid
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away midfielder over home midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away midfielder great work by home midfielder!";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) //attacker vs mid
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away attacker over home midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away attacker great work by home midfielder!";
+				}
+			}
+		}
+		else if (PositionOfBall() == 3)
+		{
+			playerHomeTeam = team1.getAttacker();
+			if (randNum > 1 && randNum < 5) // deffender vs attacker
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away Deffender over home midfielder!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away deffender great work by home midfielder!";
+				}
+			}
+			else if (randNum > 4 && randNum < 8) //mid vs attacker
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away midfielder over home attacker!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away midfielder great work by home attacker!";
+				}
+			}
+			else if (randNum > 9 && randNum < 11) // attacker vs attacker
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (0.5 * (playerAwayTeam->getPositionStats().getStrength() + playerAwayTeam->getPositionStats().getCrossing() + playerAwayTeam->getPositionStats().getVision() /
+					(playerHomeTeam->getPositionStats().getStandTackle() + playerHomeTeam->getPositionStats().getVision()
+						+ playerHomeTeam->getPositionStats().getSlideTackle())) > ChanceOfSuccess())
+				{
+					std::cout << "Nice cross by away attacker over home attacker!";
+				}
+				else
+				{
+					std::cout << "It wasnt best cross by away deffender great work by home attacker";
+				}
+			}
+		}
 		break;
 	default:
 		break;
 	}
 	return 0;
 }
+//TODO
+// оправи ball като се загуби топката
 unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
-{
-	randNum = rand() % 10 + 0; // choosing a player
-	CPlayer* playerHomeTeam = nullptr;
-	CPlayer* playerAwayTeam = nullptr;
-	switch (Ball)
-	{
-	case 0:
-
-		break;
-	case 1:
-
-		break;
-	default:
-		break;
-	}
-	return 0;
-}
-unsigned short CActions::Penalty(CTeam& team1, CTeam& team2)
 {
 	randNum = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
@@ -1257,6 +1517,24 @@ unsigned short CActions::YellowCard(CTeam& team1, CTeam& team2)
 	return 0;
 }
 unsigned short CActions::RedCard(CTeam& team1, CTeam& team2)
+{
+	randNum = rand() % 10 + 0; // choosing a player
+	CPlayer* playerHomeTeam = nullptr;
+	CPlayer* playerAwayTeam = nullptr;
+	switch (Ball)
+	{
+	case 0:
+
+		break;
+	case 1:
+
+		break;
+	default:
+		break;
+	}
+	return 0;
+}
+unsigned short CActions::Penalty(CTeam& team1, CTeam& team2)
 {
 	randNum = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
