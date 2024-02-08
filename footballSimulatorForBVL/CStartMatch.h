@@ -5,6 +5,8 @@
 class CStartMatch : public CActions
 {
 public:
-	void FirstWhistle() override;
+	CStartMatch();
+	CStartMatch(CTeam& team1, CTeam& team2);
+	void FirstWhistle(CTeam& team1, CTeam& team2);
 };
 #endif

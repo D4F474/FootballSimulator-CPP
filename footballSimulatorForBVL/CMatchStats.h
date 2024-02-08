@@ -14,7 +14,7 @@ public:
 	unsigned short Passes;
 	unsigned short YellowCard;
 	unsigned short RedCard;
-
+	
 	void incrementGoals();
 	void incrementPossesion();
 	void incrementTackles();
@@ -24,5 +24,6 @@ public:
 	void incrementPasses();
 	void incrementYellowCards();
 	void incrementRedCards();
+	void incrementMinutes();
 };
 #endif

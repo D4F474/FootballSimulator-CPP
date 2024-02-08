@@ -6,12 +6,14 @@
 #include "CTeam.h"
 #include "CPosition.h"
 #include "CPlayer.h"
+#include "CStartMatch.h"
 
 const unsigned short MAIN_MENU_OPTIONS = 2;
 
 
 void readFile(std::vector<CTeam*>& teams);
 void printTeam(const std::vector<CTeam*>& teams);
+void startMatch(std::vector<CTeam*>& teams);
 unsigned short menu();
 int main()
 {
@@ -35,7 +37,9 @@ int main()
 			system("CLS");
 			break;
 		case 2:
-			std::cout << "Hello World!";
+			system("CLS");
+			startMatch(teams);
+			system("PAUSE");
 			break;
 		default:
 			std::cout << "Stop program";
@@ -49,7 +53,8 @@ unsigned short menu()
 	std::cout << "*******" << std::endl;
 	std::cout << "*** Menu ***" << std::endl;
 	do {
-		std::cout << "1.Print teams!";
+		std::cout << "1.Print teams!" << std::endl;
+		std::cout << "2.Start Match" << std::endl;
 		std::cout << "Choise option" << std::endl;
 		std::cin >> choise;
 	} while (choise < 1 || choise > MAIN_MENU_OPTIONS);
@@ -131,4 +136,9 @@ void printTeam(const std::vector<CTeam*>& teams)
 		std::cout << *teams[i] << std::endl;
 		//teams[i]->printPlayers();
 	}
+}
+
+void startMatch(std::vector<CTeam*>& teams)
+{
+	CStartMatch* startMatch = new CStartMatch(*teams[0], *teams[1]);
 }

@@ -38,3 +38,8 @@ void CMatchStats::incrementRedCards()
 {
 	RedCard++;
 }
+
+void CMatchStats::incrementMinutes()
+{
+	Minutes++;
+}
