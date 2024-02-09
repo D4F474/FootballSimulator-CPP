@@ -38,6 +38,7 @@ CPlayer* CTeam::getGKPlayer() const
 
 CPlayer* CTeam::getDeffenderPlayer()
 {
+	randomNum = 0;
 	randomNum = rand() % 4 + 1;
 	if (Players[randomNum]->getPossition() == "RB" || Players[randomNum]->getPossition() == "CB" || Players[randomNum]->getPossition() == "LB")
 	{
@@ -51,7 +52,8 @@ CPlayer* CTeam::getDeffenderPlayer()
 
 CPlayer* CTeam::getMidPlayer() 
 {
-	randomNum = rand() % 7  + 5;
+	randomNum = 0;
+	randomNum = rand() % 7 + 5;
 	if (Players[randomNum]->getPossition() == "CM")
 	{
 		return Players[randomNum];
@@ -64,6 +66,7 @@ CPlayer* CTeam::getMidPlayer()
 
 CPlayer* CTeam::getAttacker()
 {
+	randomNum = 0;
 	randomNum = rand() % 10 + 8;
 	if (Players[randomNum]->getPossition() == "LW" || Players[randomNum]->getPossition() == "ST" || Players[randomNum]->getPossition() == "RW")
 	{
