@@ -1,0 +1,2065 @@
+﻿  CActions.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CActions.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CActions.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  CAttackers.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CAttackers.cpp')
+  
+  CCentralMid.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CCentralMid.cpp')
+  
+  CDeffenders.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CDeffenders.cpp')
+  
+  CGoalKeeper.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CGoalKeeper.cpp')
+  
+  CMatchPrep.cpp
+  CPlayer.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPlayer.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CPlayer.cpp(26,9): warning C4244: 'return': conversion from 'float' to 'unsigned short', possible loss of data
+  CPosition.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CPosition.cpp')
+  
+  CStartMatch.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CStartMatch.cpp')
+  
+  source.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'source.cpp')
+  
+  CTeam.cpp
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(7,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(8,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(9,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(10,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(11,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(14,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(15,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(16,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(17,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(18,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(19,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(20,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(24,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(25,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(26,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(27,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.h(28,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(12,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(13,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(14,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(17,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(19,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CDeffenders.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(6,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(7,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(8,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(9,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(10,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(11,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(12,50): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(13,51): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(14,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(15,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(16,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(17,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(18,45): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(19,48): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(20,46): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(21,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(22,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(23,47): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(24,42): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(25,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(26,43): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CCentralMid.h(27,44): warning C4244: 'initializing': conversion from 'double' to 'const unsigned short', possible loss of data
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(6,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(7,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(8,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(9,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(10,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(11,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(12,34): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(13,35): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(14,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(15,30): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(16,32): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(17,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(18,29): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(19,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(20,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(21,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(22,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(23,31): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(24,26): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(25,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(26,27): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.h(27,28): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  (compiling source file 'CTeam.cpp')
+  
+C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 305 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  footballSimulatorForBVL.vcxproj -> C:\Users\power\Desktop\footballsim\footballSimulatorForBVL\x64\Release\footballSimulatorForBVL.exe
