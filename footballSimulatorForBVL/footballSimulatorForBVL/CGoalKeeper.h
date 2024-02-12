@@ -3,27 +3,28 @@
 class CGoalKeeper
 {
 public:
-	const float COEF_ACCELERATION = 0.04;
-	const float COEF_STAMINA = 0.06;
-	const float COEF_STRENGTH = 0.06;
-	const float COEF_SPRINT_SPEED = 0.04;
-	const float COEF_VISION = 0.13;
-	const float COEF_SLIDE_TACKLE =0.11;
-	const float COEF_STAND_TACKLE = 0.11;
-	const float COEF_BALL_CONTROLL = 0.05;
-	const float COEF_DRIBBLING =0.03;
-	const float COEF_CROSSING = 0.01;
-	const float COEF_SHORT_PASS = 0.03;
-	const float COEF_LONG_PASS = 0.06;
-	const float COEF_HEADING = 0.01;
-	const float COEF_SHOT_POWER =0.05;
-	const float COEF_LONG_SHOT = 0.04;
-	const float COEF_PENALTIES = 0.1;
-	const float COEF_FINISHING = 0.01;
-	const float GK_POSITIONING = 0.15;
-	const float GK_DIVING = 0.15;
-	const float GK_HANDLING = 0.15;
-	const float GK_KICKING = 0.15;
-	const float GK_REFLEXES = 0.15;
+	CGoalKeeper();
+	float* COEF_ACCELERATION = new float;
+	float* COEF_STAMINA = new float;
+	float* COEF_STRENGTH = new float;
+	float* COEF_SPRINT_SPEED = new float;
+	float* COEF_VISION = new float;
+	float* COEF_SLIDE_TACKLE = new float;
+	float* COEF_STAND_TACKLE = new float;
+	float* COEF_BALL_CONTROLL = new float;
+	float* COEF_DRIBBLING = new float;
+	float* COEF_CROSSING = new float;
+	float* COEF_SHORT_PASS = new float;
+	float* COEF_LONG_PASS = new float;
+	float* COEF_HEADING = new float;
+	float* COEF_SHOT_POWER = new float;
+	float* COEF_LONG_SHOT = new float;
+	float* COEF_PENALTIES = new float;
+	float* COEF_FINISHING = new float;
+	float* GK_POSITIONING = new float;
+	float* GK_DIVING = new float;
+	float* GK_HANDLING = new float;
+	float* GK_KICKING = new float;
+	float* GK_REFLEXES = new float;
 };
 #endif

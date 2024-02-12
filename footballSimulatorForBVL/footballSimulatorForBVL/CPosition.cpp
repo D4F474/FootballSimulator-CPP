@@ -6,61 +6,66 @@ CPosition::CPosition(std::string* pos, float* acceleration, float* stamina, floa
 	float* heading, float* shotPower, float* longShot, float* penalties,
 	float* finishing, float* GKPosstioning, float* GKDiving, float* GKHandling, float* GKKicking, float* Reflexes)
 {
-		POS = *pos;
-		*ACCELERATION = *acceleration;
-		*STAMINA = *stamina;
-		*STRENGTH = *strength;
-		*SPRINT_SPEED = *sprintSpeed;
-		*DRIBBLING = *dribbling;
-		*CROSSING = *crossing;
-		*SHORT_PASS = *shortPass;
-		*LONG_PASS = *longPass;
-		*VISION = *vision;
-		*SLIDE_TACKLE = *slideTackle;
-		*STAND_TACKLE = *standTackle;
-		*BALL_CONTROLL = *ballControll;
-		*HEADING = *heading;
-		*SHOT_POWER = *shotPower;
-		*LONG_SHOT = *longShot;
-		*PENALTIES = *penalties;
-		*FINISHING = *finishing;
-		*GK_POSSITIONING = *GKPosstioning;
-		*GK_DIVING = *GKDiving; 
-		*GK_HANDLING = *GKHandling;
-		*GK_KICKING = *GKKicking;
-		*GK_REFLEXES = *Reflexes;
-	if (POS == "ST" || POS == "RW" || POS == "LW")
+		*&POS = *&pos;
+		*&ACCELERATION = *&acceleration;
+		*&STAMINA = *&stamina;
+		*&STRENGTH = *&strength;
+		*&SPRINT_SPEED = *&sprintSpeed;
+		*&DRIBBLING = *&dribbling;
+		*&CROSSING = *&crossing;
+		*&SHORT_PASS = *&shortPass;
+		*&LONG_PASS = *&longPass;
+		*&VISION = *&vision;
+		*&SLIDE_TACKLE = *&slideTackle;
+		*&STAND_TACKLE = *&standTackle;
+		*&BALL_CONTROLL = *&ballControll;
+		*&HEADING = *&heading;
+		*&SHOT_POWER = *&shotPower;
+		*&LONG_SHOT = *&longShot;
+		*&PENALTIES = *&penalties;
+		*&FINISHING = *&finishing;
+		*&GK_POSSITIONING = *&GKPosstioning;
+		*&GK_DIVING = *&GKDiving;
+		*&GK_HANDLING = *&GKHandling;
+		*&GK_KICKING = *&GKKicking;
+		*&GK_REFLEXES = *&Reflexes;
+
+	if (*POS == "ST" || *POS == "RW" || *POS == "LW")
 	{
 		//пРащаме с attackers coef-ти
-		CAttackers coef = CAttackers();
-		*OVR = (*ACCELERATION * coef.COEF_ACCELERATION) + (*STAMINA * coef.COEF_STAMINA) + (*STRENGTH * coef.COEF_STRENGTH) + (*SPRINT_SPEED * coef.COEF_SPRINT_SPEED) + (*DRIBBLING * coef.COEF_DRIBBLING) + (*CROSSING * coef.COEF_CROSSING) + (*SHORT_PASS * coef.COEF_SHORT_PASS)
-			+ (*LONG_PASS * coef.COEF_LONG_PASS) + (*VISION * coef.COEF_VISION) + (*SLIDE_TACKLE * coef.COEF_SLIDE_TACKLE) + (*STAND_TACKLE * coef.COEF_STAND_TACKLE) + (*BALL_CONTROLL * coef.COEF_BALL_CONTROLL)
-			+ (*HEADING * coef.COEF_HEADING) + (*SHOT_POWER * coef.COEF_SHOT_POWER) + (*LONG_SHOT * coef.COEF_LONG_SHOT) + (*PENALTIES * coef.COEF_PENALTIES) + (*FINISHING * coef.COEF_FINISHING)
-			+ (*GK_POSSITIONING * coef.GK_POSITIONING) + (*GK_DIVING * coef.GK_DIVING) + (*GK_HANDLING * coef.GK_HANDLING) + (*GK_KICKING * coef.GK_KICKING) + (*GK_REFLEXES * coef.GK_REFLEXES);
+		CAttackers* coef = new CAttackers();
+		*OVR = (*ACCELERATION * *coef->COEF_ACCELERATION) + (*STAMINA * *coef->COEF_STAMINA) + (*STRENGTH * *coef->COEF_STRENGTH) + (*SPRINT_SPEED * *coef->COEF_SPRINT_SPEED) + (*DRIBBLING * *coef->COEF_DRIBBLING) + (*CROSSING * *coef->COEF_CROSSING) + (*SHORT_PASS * *coef->COEF_SHORT_PASS)
+			+ (*LONG_PASS * *coef->COEF_LONG_PASS) + (*VISION * *coef->COEF_VISION) + (*SLIDE_TACKLE * *coef->COEF_SLIDE_TACKLE) + (*STAND_TACKLE * *coef->COEF_STAND_TACKLE) + (*BALL_CONTROLL * *coef->COEF_BALL_CONTROLL)
+			+ (*HEADING * *coef->COEF_HEADING) + (*SHOT_POWER * *coef->COEF_SHOT_POWER) + (*LONG_SHOT * *coef->COEF_LONG_SHOT) + (*PENALTIES * *coef->COEF_PENALTIES) + (*FINISHING * *coef->COEF_FINISHING)
+			+ (*GK_POSSITIONING * *coef->GK_POSITIONING) + (*GK_DIVING * *coef->GK_DIVING) + (*GK_HANDLING * *coef->GK_HANDLING) + (*GK_KICKING * *coef->GK_KICKING) + (*GK_REFLEXES * *coef->GK_REFLEXES);
+		delete coef;
 	}
-	else if (POS == "CM")
+	else if (*POS == "CM")
 	{
-		CCentralMid coef = CCentralMid();
-		*OVR = (*ACCELERATION * coef.COEF_ACCELERATION) + (*STAMINA * coef.COEF_STAMINA) + (*STRENGTH * coef.COEF_STRENGTH) + (*SPRINT_SPEED * coef.COEF_SPRINT_SPEED) + (*DRIBBLING * coef.COEF_DRIBBLING) + (*CROSSING * coef.COEF_CROSSING) + (*SHORT_PASS * coef.COEF_SHORT_PASS)
-			+ (*LONG_PASS * coef.COEF_LONG_PASS) + (*VISION * coef.COEF_VISION) + (*SLIDE_TACKLE * coef.COEF_SLIDE_TACKLE) + (*STAND_TACKLE * coef.COEF_STAND_TACKLE) + (*BALL_CONTROLL * coef.COEF_BALL_CONTROLL)
-			+ (*HEADING * coef.COEF_HEADING) + (*SHOT_POWER * coef.COEF_SHOT_POWER) + (*LONG_SHOT * coef.COEF_LONG_SHOT) + (*PENALTIES * coef.COEF_PENALTIES) + (*FINISHING * coef.COEF_FINISHING)
-			+ (*GK_POSSITIONING * coef.GK_POSITIONING) + (*GK_DIVING * coef.GK_DIVING) + (*GK_HANDLING * coef.GK_HANDLING) + (*GK_KICKING * coef.GK_KICKING) + (*GK_REFLEXES * coef.GK_REFLEXES);
+		CCentralMid* coef = new CCentralMid();
+		*OVR = (*ACCELERATION * *coef->COEF_ACCELERATION) + (*STAMINA * *coef->COEF_STAMINA) + (*STRENGTH * *coef->COEF_STRENGTH) + (*SPRINT_SPEED * *coef->COEF_SPRINT_SPEED) + (*DRIBBLING * *coef->COEF_DRIBBLING) + (*CROSSING * *coef->COEF_CROSSING) + (*SHORT_PASS * *coef->COEF_SHORT_PASS)
+			+ (*LONG_PASS * *coef->COEF_LONG_PASS) + (*VISION * *coef->COEF_VISION) + (*SLIDE_TACKLE * *coef->COEF_SLIDE_TACKLE) + (*STAND_TACKLE * *coef->COEF_STAND_TACKLE) + (*BALL_CONTROLL * *coef->COEF_BALL_CONTROLL)
+			+ (*HEADING * *coef->COEF_HEADING) + (*SHOT_POWER * *coef->COEF_SHOT_POWER) + (*LONG_SHOT * *coef->COEF_LONG_SHOT) + (*PENALTIES * *coef->COEF_PENALTIES) + (*FINISHING * *coef->COEF_FINISHING)
+			+ (*GK_POSSITIONING * *coef->GK_POSITIONING) + (*GK_DIVING * *coef->GK_DIVING) + (*GK_HANDLING * *coef->GK_HANDLING) + (*GK_KICKING * *coef->GK_KICKING) + (*GK_REFLEXES * *coef->GK_REFLEXES);
+		delete coef;
 	}
-	else if (POS == "CB" || POS == "RB" || POS == "LB")
+	else if (*POS == "CB" || *POS == "RB" || *POS == "LB")
 	{
-		CDeffenders coef = CDeffenders();
-		*OVR = (*ACCELERATION * coef.COEF_ACCELERATION) + (*STAMINA * coef.COEF_STAMINA) + (*STRENGTH * coef.COEF_STRENGTH) + (*SPRINT_SPEED * coef.COEF_SPRINT_SPEED) + (*DRIBBLING * coef.COEF_DRIBBLING) + (*CROSSING * coef.COEF_CROSSING) + (*SHORT_PASS * coef.COEF_SHORT_PASS)
-			+ (*LONG_PASS * coef.COEF_LONG_PASS) + (*VISION * coef.COEF_VISION) + (*SLIDE_TACKLE * coef.COEF_SLIDE_TACKLE) + (*STAND_TACKLE * coef.COEF_STAND_TACKLE) + (*BALL_CONTROLL * coef.COEF_BALL_CONTROLL)
-			+ (*HEADING * coef.COEF_HEADING) + (*SHOT_POWER * coef.COEF_SHOT_POWER) + (*LONG_SHOT * coef.COEF_LONG_SHOT) + (*PENALTIES * coef.COEF_PENALTIES) + (*FINISHING * coef.COEF_FINISHING)
-			+ (*GK_POSSITIONING * coef.GK_POSITIONING) + (*GK_DIVING * coef.GK_DIVING) + (*GK_HANDLING * coef.GK_HANDLING) + (*GK_KICKING * coef.GK_KICKING) + (*GK_REFLEXES * coef.GK_REFLEXES);
+		CDeffenders* coef = new CDeffenders();
+		*OVR = (*ACCELERATION * *coef->COEF_ACCELERATION) + (*STAMINA * *coef->COEF_STAMINA) + (*STRENGTH * *coef->COEF_STRENGTH) + (*SPRINT_SPEED * *coef->COEF_SPRINT_SPEED) + (*DRIBBLING * *coef->COEF_DRIBBLING) + (*CROSSING * *coef->COEF_CROSSING) + (*SHORT_PASS * *coef->COEF_SHORT_PASS)
+			+ (*LONG_PASS * *coef->COEF_LONG_PASS) + (*VISION * *coef->COEF_VISION) + (*SLIDE_TACKLE * *coef->COEF_SLIDE_TACKLE) + (*STAND_TACKLE * *coef->COEF_STAND_TACKLE) + (*BALL_CONTROLL * *coef->COEF_BALL_CONTROLL)
+			+ (*HEADING * *coef->COEF_HEADING) + (*SHOT_POWER * *coef->COEF_SHOT_POWER) + (*LONG_SHOT * *coef->COEF_LONG_SHOT) + (*PENALTIES * *coef->COEF_PENALTIES) + (*FINISHING * *coef->COEF_FINISHING)
+			+ (*GK_POSSITIONING * *coef->GK_POSITIONING) + (*GK_DIVING * *coef->GK_DIVING) + (*GK_HANDLING * *coef->GK_HANDLING) + (*GK_KICKING * *coef->GK_KICKING) + (*GK_REFLEXES * *coef->GK_REFLEXES);
+		delete coef;
 	}
-	else if(POS == "GK")
+	else if(*POS == "GK")
 	{
-		CGoalKeeper coef = CGoalKeeper();
-		*OVR = (*ACCELERATION * coef.COEF_ACCELERATION) + (*STAMINA * coef.COEF_STAMINA) + (*STRENGTH* coef.COEF_STRENGTH) + (*SPRINT_SPEED * coef.COEF_SPRINT_SPEED) + (*DRIBBLING * coef.COEF_DRIBBLING) + (*CROSSING * coef.COEF_CROSSING) + (*SHORT_PASS * coef.COEF_SHORT_PASS)
-			+ (*LONG_PASS * coef.COEF_LONG_PASS) + (*VISION * coef.COEF_VISION) + (*SLIDE_TACKLE * coef.COEF_SLIDE_TACKLE) + (*STAND_TACKLE * coef.COEF_STAND_TACKLE) + (*BALL_CONTROLL * coef.COEF_BALL_CONTROLL)
-			+(*HEADING * coef.COEF_HEADING) + (*SHOT_POWER * coef.COEF_SHOT_POWER) + (*LONG_SHOT * coef.COEF_LONG_SHOT) + (*PENALTIES * coef.COEF_PENALTIES) + (*FINISHING * coef.COEF_FINISHING)
-			+ (*GK_POSSITIONING * coef.GK_POSITIONING) + (*GK_DIVING * coef.GK_DIVING) + (*GK_HANDLING * coef.GK_HANDLING) + (*GK_KICKING * coef.GK_KICKING) + (*GK_REFLEXES *coef.GK_REFLEXES);
+		CGoalKeeper* coef = new CGoalKeeper();
+		*OVR = (*ACCELERATION * *coef->COEF_ACCELERATION) + (*STAMINA * *coef->COEF_STAMINA) + (*STRENGTH * *coef->COEF_STRENGTH) + (*SPRINT_SPEED * *coef->COEF_SPRINT_SPEED) + (*DRIBBLING * *coef->COEF_DRIBBLING) + (*CROSSING * *coef->COEF_CROSSING) + (*SHORT_PASS * *coef->COEF_SHORT_PASS)
+			+ (*LONG_PASS * *coef->COEF_LONG_PASS) + (*VISION * *coef->COEF_VISION) + (*SLIDE_TACKLE * *coef->COEF_SLIDE_TACKLE) + (*STAND_TACKLE * *coef->COEF_STAND_TACKLE) + (*BALL_CONTROLL * *coef->COEF_BALL_CONTROLL)
+			+ (*HEADING * *coef->COEF_HEADING) + (*SHOT_POWER * *coef->COEF_SHOT_POWER) + (*LONG_SHOT * *coef->COEF_LONG_SHOT) + (*PENALTIES * *coef->COEF_PENALTIES) + (*FINISHING * *coef->COEF_FINISHING)
+			+ (*GK_POSSITIONING * *coef->GK_POSITIONING) + (*GK_DIVING * *coef->GK_DIVING) + (*GK_HANDLING * *coef->GK_HANDLING) + (*GK_KICKING * *coef->GK_KICKING) + (*GK_REFLEXES * *coef->GK_REFLEXES);
+		delete coef;
 	}
 }
 

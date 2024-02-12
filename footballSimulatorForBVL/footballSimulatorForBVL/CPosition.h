@@ -8,7 +8,7 @@
 class CPosition 
 {
 	private:
-		std::string POS = "";
+		std::string* POS = nullptr;
 		float* ACCELERATION = 0;
 		float* STAMINA = 0;
 		float* STRENGTH = 0;
@@ -31,7 +31,7 @@ class CPosition
 		float* GK_HANDLING = 0;
 		float* GK_KICKING = 0;
 		float* GK_REFLEXES = 0;
-		double* OVR = 0;
+		float* OVR = new float;
 	public:
 		CPosition();
 		CPosition(std::string* pos, float* acceleration, float* stamina, float* strength, float* sprintSpeed,

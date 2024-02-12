@@ -51,6 +51,18 @@
     <ClCompile Include="CMatchStats.cpp">
       <Filter>Source Files\Match</Filter>
     </ClCompile>
+    <ClCompile Include="CGoalKeeper.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="CDeffenders.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="CCentralMid.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="CAttackers.cpp">
+      <Filter>Source Files\Players</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CAttackers.h">
