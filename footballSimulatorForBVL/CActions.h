@@ -11,7 +11,7 @@
 class CActions : public CMatchPrep
 {
 protected:
-	unsigned short randNum;
+	unsigned short randNumber;
 public:
 	CActions();
 	static unsigned short randNumGenerator(unsigned short number);

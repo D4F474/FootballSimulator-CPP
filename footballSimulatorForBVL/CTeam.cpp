@@ -39,46 +39,36 @@ CPlayer* CTeam::getGKPlayer() const
 CPlayer* CTeam::getDeffenderPlayer()
 {
 	randomNum = 0;
-	randomNum = rand() % 4 + 1;
+	randomNum = rand() % 1 + 4;
 	if (Players[randomNum]->getPossition() == "RB" || Players[randomNum]->getPossition() == "CB" || Players[randomNum]->getPossition() == "LB")
 	{
 		return Players[randomNum];
 	}
-	else 
-	{
-		throw std::runtime_error("Not a deffender!");
-	}
+	
 }
 
-CPlayer* CTeam::getMidPlayer() 
+CPlayer* CTeam::getMidPlayer()
 {
 	randomNum = 0;
-	randomNum = rand() % 7 + 5;
+	randomNum = rand() % 5 + 7;
 	if (Players[randomNum]->getPossition() == "CM")
 	{
 		return Players[randomNum];
-	}
-	else
-	{
-		throw std::runtime_error("Not a CentralMid!");
 	}
 }
 
 CPlayer* CTeam::getAttacker()
 {
 	randomNum = 0;
-	randomNum = rand() % 10 + 8;
-	if (Players[randomNum]->getPossition() == "LW" || Players[randomNum]->getPossition() == "ST" || Players[randomNum]->getPossition() == "RW")
+	randomNum = rand() % 3  + 8;
+	if (Players[randomNum]->getPossition() == "LW" || Players[randomNum]->getPossition() == "ST" || Players[randomNum]->getPossition() == "RW" )
 	{
 		return Players[randomNum];
 	}
-	else
-	{
-		throw std::runtime_error("Not a Attacker!");
-	}
+
 }
 
-CMatchStats CTeam::getStats() const
+CMatchStats* CTeam::getStats()
 {
 	return statForMatch;
 }

@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <vector>
 #include <sstream>
@@ -60,7 +60,7 @@ unsigned short menu()
 	} while (choise < 1 || choise > MAIN_MENU_OPTIONS);
 	return choise;
 }
- 
+ // не го четеее
 void readFile(std::vector<CTeam*>& teams)
 {
 	std::ifstream file;
@@ -73,16 +73,16 @@ void readFile(std::vector<CTeam*>& teams)
 	{
 		while (true)
 		{
-		std::string line;
+		std::string line = " ";
 		std::getline(file, line);
 		if (line == "*")
 		{
 			continue;
 		}
-			std::string TeamName, firstName, lastName, position, pos;
-			unsigned short points, goals, wins, loses, draws, age;
-			float acceleration, stamina, strength, sprintSpeed, vision, slideTackle, standTackle, ballControll, dribbling, crossing, shortPass,
-				longPass, heading, shotPower, longShot, penalties, finishing, GKpositioning, GKDiving, GKHandling, GKkicking, GKReflex;
+			std::string TeamName = " ", firstName = " ", lastName = " ", position = " ", pos = " ";
+			unsigned short points = 0,  goals = 0,  wins = 0,  loses = 0,  draws = 0,  age = 0;
+			float acceleration = 0, stamina = 0, strength = 0, sprintSpeed = 0, vision = 0, slideTackle = 0, standTackle = 0, ballControll = 0, dribbling = 0, crossing = 0, shortPass = 0,
+			 longPass = 0, heading = 0, shotPower = 0, longShot = 0, penalties = 0, finishing = 0, GKpositioning = 0, GKDiving = 0, GKHandling = 0, GKkicking = 0, GKReflex = 0;
 			//Readfiles
 			TeamName = line;
 			std::getline(file, line);
@@ -116,11 +116,11 @@ void readFile(std::vector<CTeam*>& teams)
 					ss >> acceleration; ss >> stamina; ss >> strength; ss >> sprintSpeed; ss >> vision; ss >> slideTackle; ss >> standTackle; ss >> ballControll; ss >> dribbling;
 					ss >> crossing; ss >> shortPass; ss >> longPass; ss >> heading; ss >> shotPower; ss >> longShot; ss >> penalties; ss >> finishing; ss >> GKpositioning;
 					ss >> GKDiving; ss >> GKHandling; ss >> GKkicking; ss >> GKReflex;
-				//CPosition std::string pos,float acceleration, float stamina, float strength, float sprintSpeed, float vision, float slideTackle, float standTackle, float ballControll, float dribbling, float crossing, float shortPass, float longPass, float heading, float shotPower, float longShot, float penalties, float finishing, float GKPosstioning, float GKDiving, float GKHandling, float GKKicking, float Reflexes
-					CPosition* stats = new CPosition(position, acceleration, stamina, strength, sprintSpeed, vision, slideTackle, standTackle, ballControll, dribbling, crossing, shortPass,
-						longPass, heading, shotPower, longShot, penalties, finishing, GKpositioning, GKDiving, GKHandling, GKkicking, GKReflex);
+					//std::string* pos, float* acceleration, float* stamina, float* strength, float* sprintSpeed, float* vision, float* slideTackle, float* standTackle, float* ballControll,float* dribbling, float* crossing, float* shortPass, float* longPass,float* heading, float* shotPower, float* longShot, float* penalties,float* finishing, float* GKPosstioning, float* GKDiving, float* GKHandling, float* GKKicking, float* Reflexes
+					CPosition* stats = new CPosition(&position, &acceleration, &stamina, &strength, &sprintSpeed, &vision, &slideTackle, &standTackle, &ballControll, &dribbling, &crossing, &shortPass,
+						&longPass, &heading, &shotPower, &longShot, &penalties, &finishing, &GKpositioning, &GKDiving, &GKHandling, &GKkicking, &GKReflex);
 					//CPlayer: std::string firstName, std::string lastName, std::string possition, unsigned short age, CPosition& positionStats
-					CPlayer* player = new CPlayer(firstName, lastName, position, age, *stats);
+					CPlayer* player = new CPlayer(&firstName, &lastName, &position, &age, *&stats);
 					team->addPlayer(*player);
 				}
 				teams.push_back(team);

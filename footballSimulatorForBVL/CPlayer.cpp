@@ -1,37 +1,40 @@
 #include "CPlayer.h"
 //"Dafin", "Dafinov", "GK", "20", Position
-CPlayer::CPlayer(std::string firstName, std::string lastName, std::string possition, unsigned short age, CPosition& positionStats)
-	:FIRSTNAME(firstName), LASTNAME(lastName), POSSITION(possition),AGE(age), POSITION_STATS(positionStats)
+CPlayer::CPlayer(std::string* firstName, std::string* lastName, std::string* possition, unsigned short* age, CPosition* positionStats)
 {
-	OVR = POSITION_STATS.getOVR();
+	FIRSTNAME = firstName; 
+	LASTNAME = lastName;
+	POSSITION = possition;
+	AGE = age;
+	POSITION_STATS = *&positionStats;
+	OVR = POSITION_STATS->getOVR();
 }
 std::string CPlayer::getFirstName()const
 {
-	return FIRSTNAME;
+	return *FIRSTNAME;
 }
 std::string CPlayer::getLastName() const
 {
-	return LASTNAME;
+	return *LASTNAME;
 }
 std::string CPlayer::getPossition() const
 {
-	return POSSITION;
+	return *POSSITION;
 }
 unsigned short CPlayer::getAge() const
 {
-	return AGE;
+	return *AGE;
 }
 unsigned short CPlayer::getOVR() const
 {
 	return OVR;
 }
-CPosition CPlayer::getPositionStats() const
+CPosition* CPlayer::getPositionStats() 
 {
 	return POSITION_STATS;
 }
 std::ostream& operator <<(std::ostream& toStream, const CPlayer& player)
 {
-
 	toStream << "---------------------" << std::endl
 		<< "First name: " << player.FIRSTNAME << std::endl
 		<< "Last name: " << player.LASTNAME << std::endl

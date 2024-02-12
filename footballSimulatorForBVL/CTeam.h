@@ -14,7 +14,7 @@ class CTeam
 private:
 	std::vector<CPlayer*> Players;
 	std::string NameOfTeam;
-	CMatchStats statForMatch;
+	CMatchStats* statForMatch;
 	unsigned short randomNum;
 	unsigned short Points;
 	unsigned short Goals;
@@ -30,7 +30,7 @@ public:
 	friend std::ostream& operator << (std::ostream& toStream, const CTeam& team);
 	void addPlayer(CPlayer& player);
 	void printPlayers() const;
-	CMatchStats getStats() const;
+	CMatchStats* getStats() ;
 	CPlayer* getGKPlayer() const;
 	CPlayer* getDeffenderPlayer();
 	CPlayer* getMidPlayer();
