@@ -1912,7 +1912,7 @@ unsigned short CActions::Dribble(CTeam& team1, CTeam& team2)
 			//mid vs mid
 			else if (randNumber > 4 && randNumber < 8)
 			{
-				playerAwayTeam = team2.getDeffenderPlayer();
+				playerAwayTeam = team2.getMidPlayer();
 				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
 				{
@@ -2359,11 +2359,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2374,11 +2376,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2389,11 +2393,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home Attacker";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
+					std::cout << "Poor heading by Attacker and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2408,11 +2414,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2423,11 +2431,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2438,11 +2448,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home Attacker";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2457,11 +2469,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2472,11 +2486,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team1.getStats()->incrementPasses();
 					Ball = 0;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team2.getStats()->incrementTackles();
 					Ball = 1;
 				}
 			}
@@ -2492,16 +2508,21 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 						(playerAwayTeam->getPositionStats()->getGKPossitioning()) + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes() > ChanceOfSuccess())
 					{
 						std::cout << "What a incredible header by home attacker and this is goal!!!!";
+						team1.getStats()->incrementGoals();
+						team1.getStats()->incrementShotsOnTarget();
 						Ball = 1;
 					}
 					else {
 						std::cout << "What a save!!!";
+						team1.getStats()->incrementShotsOnTarget();
 						Ball = 1;
 					}
 				}
 				else
 				{
 					std::cout << "Poor heading by attacker and this is chance for away team!";
+					team1.getStats()->incrementShotOffTarget();
+
 					Ball = 1;
 				}
 			}
@@ -2518,11 +2539,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2533,11 +2556,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2548,11 +2573,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home Attacker";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2567,11 +2594,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2582,11 +2611,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2597,18 +2628,20 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home Attacker";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
 		}
 		else if (positionOfBall == 3)
 		{
-			playerAwayTeam = team2.getAttacker(); //Attacker vs deffender
+			playerHomeTeam = team2.getAttacker(); //Attacker vs deffender
 			if (randNumber > 1 && randNumber < 5)
 			{
 				playerAwayTeam = team2.getDeffenderPlayer();
@@ -2616,11 +2649,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2631,11 +2666,13 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home midfielder and pass";
+					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
 					std::cout << "Poor heading by midfielder and this is chance for away team!";
+					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
@@ -2646,21 +2683,25 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
 				{
 					std::cout << "Nice header by home Attacker have to beat and goalkeeper!!!";
+					team2.getStats()->incrementShotsOnTarget();
 					playerAwayTeam = team2.getGKPlayer();
 					if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
 						(playerAwayTeam->getPositionStats()->getGKPossitioning()) + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes() > ChanceOfSuccess())
 					{
 						std::cout << "What a incredible header by home attacker and this is goal!!!!";
+						team2.getStats()->incrementGoals();
 						Ball = 0;
 					}
 					else {
 						std::cout << "What a save!!!";
+						
 						Ball = 0;
 					}
 				}
 				else
 				{
 					std::cout << "Poor heading by deffender and this is chance for away team!";
+					team2.getStats()->incrementShotOffTarget();
 					Ball = 0;
 				}
 			}
