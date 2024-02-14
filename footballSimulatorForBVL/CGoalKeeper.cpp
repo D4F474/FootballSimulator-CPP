@@ -1,5 +1,4 @@
 #include "CGoalKeeper.h"
-
 CGoalKeeper::CGoalKeeper()
 {
 	*COEF_ACCELERATION = 0.04;

@@ -27,7 +27,7 @@ private:
 public:
 	//32 23 4 5 5
 	CTeam(std::string nameOfTeam, unsigned short points, unsigned short goals, unsigned short wins, unsigned short loses, unsigned short draws);
-	friend std::ostream& operator << (std::ostream& toStream, const CTeam& team);
+	friend std::ostream& operator << (std::ostream& toStream,const  CTeam* team);
 	void addPlayer(CPlayer& player);
 	void printPlayers() const;
 	CMatchStats* getStats() ;

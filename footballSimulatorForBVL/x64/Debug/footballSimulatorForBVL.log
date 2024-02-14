@@ -1,60 +1,12 @@
 ﻿  CActions.cpp
 C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CActions.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  CAttackers.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(5,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(6,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(7,19): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(8,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(9,17): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(10,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(11,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(12,24): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(13,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(14,19): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(15,21): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(16,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(17,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(18,21): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(19,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(20,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(21,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(22,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(23,15): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(24,17): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(25,16): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CAttackers.cpp(26,17): warning C4305: '=': truncation from 'double' to 'float'
-  CGoalKeeper.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(5,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(6,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(7,19): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(8,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(9,17): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(10,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(11,23): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(12,24): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(13,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(14,19): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(15,21): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(16,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(17,18): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(18,21): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(19,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(20,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(21,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(22,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(23,15): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(24,17): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(25,16): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CGoalKeeper.cpp(26,17): warning C4305: '=': truncation from 'double' to 'float'
-  CPlayer.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CPlayer.cpp(30,9): warning C4244: 'return': conversion from 'const double' to 'unsigned short', possible loss of data
-  CPosition.cpp
   CStartMatch.cpp
-  CTeam.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  CMatchStats.cpp
   source.cpp
+  CTeam.cpp
+C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(48): warning C4715: 'CTeam::getDeffenderPlayer': not all control paths return a value
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(58): warning C4715: 'CTeam::getMidPlayer': not all control paths return a value
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(69): warning C4715: 'CTeam::getAttacker': not all control paths return a value
+C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(53): warning C4715: 'CTeam::getDeffenderPlayer': not all control paths return a value
+C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(63): warning C4715: 'CTeam::getMidPlayer': not all control paths return a value
+C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(74): warning C4715: 'CTeam::getAttacker': not all control paths return a value
   footballSimulatorForBVL.vcxproj -> C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\x64\Debug\footballSimulatorForBVL.exe

@@ -1,6 +1,10 @@
 #include "CPlayer.h"
 //"Dafin", "Dafinov", "GK", "20", Position
-CPlayer::CPlayer(std::string* firstName, std::string* lastName, std::string* possition, unsigned short* age, CPosition* positionStats)
+CPlayer::CPlayer()
+{
+	POSITION_STATS = new CPosition();
+}
+CPlayer::CPlayer(std::string firstName, std::string lastName, std::string possition, unsigned short age, CPosition*& positionStats)
 {
 	FIRSTNAME = firstName; 
 	LASTNAME = lastName;
@@ -11,19 +15,19 @@ CPlayer::CPlayer(std::string* firstName, std::string* lastName, std::string* pos
 }
 std::string CPlayer::getFirstName()const
 {
-	return *FIRSTNAME;
+	return FIRSTNAME;
 }
 std::string CPlayer::getLastName() const
 {
-	return *LASTNAME;
+	return LASTNAME;
 }
 std::string CPlayer::getPossition() const
 {
-	return *POSSITION;
+	return POSSITION;
 }
 unsigned short CPlayer::getAge() const
 {
-	return *AGE;
+	return AGE;
 }
 unsigned short CPlayer::getOVR() const
 {

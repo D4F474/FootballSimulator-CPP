@@ -6,8 +6,9 @@ class CStartMatch : public CActions
 {
 public:
 	unsigned short minute = 0;
+	CMatchStats* matchStats;
 	CStartMatch();
-	CStartMatch(CTeam& team1, CTeam& team2);
-	void FirstWhistle(CTeam& team1, CTeam& team2);
+	CStartMatch(CTeam*& team1, CTeam*& team2);
+	void FirstWhistle(CTeam*& team1, CTeam*& team2);
 };
 #endif

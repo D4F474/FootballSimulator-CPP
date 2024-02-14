@@ -14,7 +14,7 @@ public:
 	unsigned short Passes;
 	unsigned short YellowCard;
 	unsigned short RedCard;
-	
+	CMatchStats();
 	void incrementGoals();
 	void incrementPossesion();
 	void incrementTackles();

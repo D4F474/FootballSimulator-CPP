@@ -117,10 +117,10 @@ void readFile(std::vector<CTeam*>& teams)
 					ss >> crossing; ss >> shortPass; ss >> longPass; ss >> heading; ss >> shotPower; ss >> longShot; ss >> penalties; ss >> finishing; ss >> GKpositioning;
 					ss >> GKDiving; ss >> GKHandling; ss >> GKkicking; ss >> GKReflex;
 					//std::string* pos, float* acceleration, float* stamina, float* strength, float* sprintSpeed, float* vision, float* slideTackle, float* standTackle, float* ballControll,float* dribbling, float* crossing, float* shortPass, float* longPass,float* heading, float* shotPower, float* longShot, float* penalties,float* finishing, float* GKPosstioning, float* GKDiving, float* GKHandling, float* GKKicking, float* Reflexes
-					CPosition* stats = new CPosition(&position, &acceleration, &stamina, &strength, &sprintSpeed, &vision, &slideTackle, &standTackle, &ballControll, &dribbling, &crossing, &shortPass,
-						&longPass, &heading, &shotPower, &longShot, &penalties, &finishing, &GKpositioning, &GKDiving, &GKHandling, &GKkicking, &GKReflex);
+					CPosition* stats = new CPosition(position, acceleration, stamina, strength, sprintSpeed, vision, slideTackle, standTackle, ballControll, dribbling, crossing, shortPass,
+						longPass, heading, shotPower, longShot, penalties, finishing, GKpositioning, GKDiving, GKHandling, GKkicking, GKReflex);
 					//CPlayer: std::string firstName, std::string lastName, std::string possition, unsigned short age, CPosition& positionStats
-					CPlayer* player = new CPlayer(&firstName, &lastName, &position, &age, *&stats);
+					CPlayer* player = new CPlayer(firstName, lastName, position, age, *&stats);
 					team->addPlayer(*player);
 				}
 				teams.push_back(team);
@@ -131,14 +131,13 @@ void readFile(std::vector<CTeam*>& teams)
 
 void printTeam(const std::vector<CTeam*>& teams)
 {
-	for (int i = 0; i < teams.size(); i++)
+	for (auto team : teams)
 	{
-		std::cout << *teams[i] << std::endl;
-		//teams[i]->printPlayers();
+		std::cout << team << std:: endl;
 	}
 }
 
 void startMatch(std::vector<CTeam*>& teams)
 {
-	CStartMatch* startMatch = new CStartMatch(*teams[0], *teams[1]);
+	CStartMatch* startMatch = new CStartMatch(teams[0], teams[1]);
 }

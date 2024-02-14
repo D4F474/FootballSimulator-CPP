@@ -1,5 +1,18 @@
 #include "CMatchStats.h"
 
+CMatchStats::CMatchStats() 
+{
+	Goals = 0;
+	Minutes = 0;
+	Tackles = 0;
+	ShotsOnTarget = 0;
+	ShotOffTarget = 0;
+	Offside = 0;
+	Passes = 0;
+	YellowCard = 0;
+	RedCard = 0;
+}
+
 void CMatchStats::incrementTackles()
 {
 	Tackles++;

@@ -34,6 +34,7 @@ unsigned short CActions::Shoot(CTeam& team1, CTeam& team2)
 	randNumber = randNumGenerator(10); // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
+
 	switch (Ball)
 	{
 		//Home team
