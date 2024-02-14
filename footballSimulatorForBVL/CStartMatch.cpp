@@ -2,7 +2,6 @@
 
 CStartMatch::CStartMatch()
 {
-	matchStats = new CMatchStats();
 }
 
 CStartMatch::CStartMatch(CTeam*& team1, CTeam*& team2) 
@@ -17,7 +16,7 @@ void CStartMatch::FirstWhistle(CTeam*& team1, CTeam*& team2)
 	{
 		system("CLS");
 		//shoot pass dribble crossing, heading, yellowcard,redcard,penalty
-		switch (0)
+		switch (randNumGenerator(7))
 		{
 			case 0:
 				Shoot(*team1, *team2);

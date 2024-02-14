@@ -7,6 +7,7 @@ CTeam::CTeam(std::string nameOfTeam, unsigned short points, unsigned short goals
 	Wins = wins;
 	Loses = loses;
 	Draws = draws;
+	statForMatch = new CMatchStats();
 	srand(time(NULL));
 }
 

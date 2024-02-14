@@ -1,12 +1,2 @@
-﻿  CActions.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CActions.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  CStartMatch.cpp
-  CMatchStats.cpp
-  source.cpp
-  CTeam.cpp
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(10,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(53): warning C4715: 'CTeam::getDeffenderPlayer': not all control paths return a value
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(63): warning C4715: 'CTeam::getMidPlayer': not all control paths return a value
-C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CTeam.cpp(74): warning C4715: 'CTeam::getAttacker': not all control paths return a value
+﻿  CStartMatch.cpp
   footballSimulatorForBVL.vcxproj -> C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\x64\Debug\footballSimulatorForBVL.exe
