@@ -1893,11 +1893,11 @@ unsigned short CActions::Dribble(CTeam& team1, CTeam& team2)
 		else if (positionOfBall == 2)
 			// mid side away team
 		{
-			playerAwayTeam = team2.getDeffenderPlayer();
+			playerHomeTeam = team1.getDeffenderPlayer();
 			//deffender vs mid
 			if (randNumber > 1 && randNumber < 5)
 			{
-				playerHomeTeam = team1.getDeffenderPlayer();
+				playerAwayTeam = team2.getDeffenderPlayer();
 				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
 					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
 				{

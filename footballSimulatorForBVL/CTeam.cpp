@@ -78,3 +78,7 @@ CMatchStats* CTeam::getStats()
 {
 	return statForMatch;
 }
+
+std::string CTeam::getTeamName() {
+	return NameOfTeam;
+}

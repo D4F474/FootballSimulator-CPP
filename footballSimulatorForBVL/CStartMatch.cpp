@@ -16,7 +16,7 @@ void CStartMatch::FirstWhistle(CTeam*& team1, CTeam*& team2)
 	{
 		system("CLS");
 		//shoot pass dribble crossing, heading, yellowcard,redcard,penalty
-		switch (randNumGenerator(7))
+		switch (randNumGenerator(4))
 		{
 			case 0:
 				Shoot(*team1, *team2);
@@ -49,6 +49,8 @@ void CStartMatch::FirstWhistle(CTeam*& team1, CTeam*& team2)
 		}
 		minute++;
 	}
+	system("CLS");
+	std::cout << team1->getTeamName() << "              -         " << team2->getTeamName() << std::endl;
 	std::cout << team1->getStats()->Goals << " Goal " << team2->getStats()->Goals << std::endl;
 	std::cout << team1->getStats()->ShotsOnTarget << " Shots on Target " << team2->getStats()->ShotsOnTarget << std::endl;
 	std::cout << team1->getStats()->ShotOffTarget << " Shots off Target " << team2->getStats()->ShotOffTarget << std::endl;
