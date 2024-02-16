@@ -1,2 +1,3 @@
-﻿  CStartMatch.cpp
+﻿  CActions.cpp
+C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\footballSimulatorForBVL\CActions.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   footballSimulatorForBVL.vcxproj -> C:\Users\power\Desktop\footballSimulator\footballSimulatorForBVL\x64\Debug\footballSimulatorForBVL.exe

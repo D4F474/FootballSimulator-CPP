@@ -17,6 +17,11 @@ unsigned short CActions::randNumGenerator(unsigned short number)
 {
 	return rand() % number + 0;
 }
+
+float randomDouble() 
+{
+	return static_cast<float>(rand()) / RAND_MAX;
+}
 unsigned short CActions::PositionOfBall()
 {
 	return rand() % 3 + 1;
@@ -27,2516 +32,2382 @@ void CActions::FirstWhistle()
 	randNumber = rand() % 1 + 0;
 	Ball = randNumber;
 }
-unsigned short CActions::Shoot(CTeam& team1, CTeam& team2)
+
+bool CActions::simulateAlgorithm(float AStatOne,float AStatTwo,float AStatThree, float DStatOne, float DStatTwo, float DStatThree)
 {
+	// Изчисляване на общия успех на удара
+	double totalSuccess = 0;
+	for (int i = 0; i < 3; i++) {
+		totalSuccess += ((AStatOne / 100) + (AStatTwo /100) + (AStatThree / 100)) * randomDouble();
+	}
+	double totalFailure = 0.17;
+	for (int i = 0; i < 3; i++) {
+		totalFailure += ((AStatOne / 100) + (AStatTwo / 100) + (AStatThree / 100)) * randomDouble();
+	}
+
+	// Ако общият успех на удара надвишава общия неуспех на вратаря, то ударът е успешен
+	return totalSuccess > totalFailure;
+}
+
+void CActions::Shoot(CTeam& team1, CTeam& team2)
+{
+	successChance = 0; 
 	unsigned short positionOfBall = PositionOfBall();
 	unsigned short longOrShortShoot = LongOrShort();
 	randNumber = randNumGenerator(10); // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
 
-	switch (Ball)
+	if (Ball == 0)
 	{
-		//Home team
-	case 0:
-		if (positionOfBall == 1)
+		switch (positionOfBall)
 		{
+		case 1: //deffender 
 			playerAwayTeam = team2.getDeffenderPlayer();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs deffender
+			if (randNumber > 0 && randNumber < 5)
 			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) //attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 2)
-		{
-			playerAwayTeam = team2.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs midfielder
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << " midfielder and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) //attacker vs mid
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerAwayTeam = team2.getAttacker();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs attacker
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs attacker
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongShot() /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-							+ playerAwayTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
-					{
-						playerAwayTeam = team2.getGKPlayer();
-						if (0.5 * (playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getLongPass() /
-							playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getReflexes() +
-							playerAwayTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
-						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team1.getStats()->incrementGoals();
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-						else
-						{
-							std::cout << "Save by goalKeeper!";
-							team1.getStats()->incrementShotsOnTarget();
-							Ball = 1;
-						}
-					}
-					else
-					{
-						std::cout << "Far away from goal!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
-				{
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * ((playerHomeTeam->getPositionStats()->getFinishing() + playerHomeTeam->getPositionStats()->getShotPower() + playerHomeTeam->getPositionStats()->getBallControll()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning() + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
-					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerHomeTeam->getLastName() << std::endl;
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
-						Ball = 1;
-					}
-					else
-					{
-						std::cout << "What a miss!";
-						team1.getStats()->incrementShotOffTarget();
-						Ball = 1;
-					}
-				}
-			}
-		}
-		break;
-	case 1:
-		if (positionOfBall == 1)
-		{
 			playerHomeTeam = team1.getDeffenderPlayer();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs deffender
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) // deffender vs deffender
 					{
-						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team2.getStats()->incrementGoals();
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else 
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else 
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else 
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling())) 
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //mid vs deffender
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 7 && randNumber <11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //Attacker vs deffender
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			break;
+		case 2: //middfielder
+			playerAwayTeam = team2.getMidPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //deffernder vs mid
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //mid vs mid
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //attacker vs mid
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			break;
+		case 3://attacker
+			playerAwayTeam = team2.getAttacker();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //deffernder vs attacker
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //mid vs attacker
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getVision())) //attacker vs attacker
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+							playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+						else
+						{
+							std::cout << "superb save by the keeper!";
+							Ball = 1;
+						}
+					}
+					else
+					{
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				else
+				{
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getFinishing(), playerHomeTeam->getPositionStats()->getShotPower(), playerHomeTeam->getPositionStats()->getLongShot(),
+						playerAwayTeam->getPositionStats()->getGKPossitioning(), playerAwayTeam->getPositionStats()->getReflexes(), playerAwayTeam->getPositionStats()->getGKHandling()))
+					{
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team1.getStats()->incrementGoals();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
+						Ball = 1;
+					}
+				}
+			}
+			break;
+		}
+	}
+	else if (Ball = 1)
+	{
+		switch (positionOfBall)
+		{
+		case 1: //deffender 
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
+				{
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) // deffender vs deffender
+					{
+						team1.getStats()->incrementShotsOnTarget();
+						playerHomeTeam = team1.getGKPlayer();
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
+						{
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementShotsOnTarget();
+							team2.getStats()->incrementGoals();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
-							team2.getStats()->incrementShotsOnTarget();
+							std::cout << "superb save by the keeper!";
+							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team2.getStats()->incrementShotsOnTarget();
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << std::endl;
-						team2.getStats()->incrementGoals();
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementShotsOnTarget();
+						team2.getStats()->incrementGoals();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						team2.getStats()->incrementShotsOnTarget();
+						std::cout << "superb save by the keeper!";
 						Ball = 0;
 					}
 				}
 			}
 			else if (randNumber > 4 && randNumber < 8)
 			{
+				playerHomeTeam = team1.getDeffenderPlayer();
 				playerAwayTeam = team2.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //mid vs deffender
 					{
-						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						team1.getStats()->incrementShotsOnTarget();
+						playerHomeTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementGoals();
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
-					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					playerHomeTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-			else if (randNumber > 7 && randNumber < 11) //attacker
+			else if (randNumber > 7 && randNumber < 11)
 			{
-				playerAwayTeam = team2.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				playerHomeTeam = team1.getDeffenderPlayer();
+				playerAwayTeam = team1.getAttacker();
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //Attacker vs deffender
 					{
+						team1.getStats()->incrementShotsOnTarget();
 						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementGoals();
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-		}
-		else if (positionOfBall == 2)
-		{
+			break;
+		case 2: //middfielder
 			playerHomeTeam = team1.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs midfielder
+			if (randNumber > 0 && randNumber < 5)
 			{
 				playerAwayTeam = team2.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //deffernder vs mid
 					{
+						team1.getStats()->incrementShotsOnTarget();
 						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << " midfielder and goalkeeper are watching stressed!" << std::endl;
-							team2.getStats()->incrementGoals();
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementShotsOnTarget();
+							team2.getStats()->incrementGoals();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
+			else if (randNumber > 4 && randNumber < 8)
 			{
 				playerAwayTeam = team2.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //mid vs mid
 					{
+						team1.getStats()->incrementShotsOnTarget();
 						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementGoals();
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-			else if (randNumber > 7 && randNumber < 11) //attacker vs mid
+			else if (randNumber > 7 && randNumber < 11)
 			{
 				playerAwayTeam = team2.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //attacker vs mid
 					{
-						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementGoals();
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-		}
-		else if (positionOfBall == 3)
-		{
+			break;
+		case 3://attacker
 			playerHomeTeam = team1.getAttacker();
-			if (randNumber > 1 && randNumber < 5) //DeffenderPlayer vs attacker
+			if (randNumber > 0 && randNumber < 5)
 			{
 				playerAwayTeam = team2.getDeffenderPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //deffernder vs attacker
 					{
+						team1.getStats()->incrementShotsOnTarget();
 						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementGoals();
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
+
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
+							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
 					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by deffender: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementGoals();
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs attacker
+			else if (randNumber > 4 && randNumber < 8)
 			{
 				playerAwayTeam = team2.getMidPlayer();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //mid vs attacker
 					{
-						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						team1.getStats()->incrementShotsOnTarget();
+						playerAwayTeam = team2.getGKPlayer();
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by Midfielder: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team2.getStats()->incrementGoals();
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementShotsOnTarget();
+							team2.getStats()->incrementGoals();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
 							Ball = 0;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
+						team2.getStats()->incrementShotsOnTarget();
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
-					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by midfielder: " << playerAwayTeam->getLastName() << std::endl;
-						team2.getStats()->incrementGoals();
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
 						team2.getStats()->incrementShotsOnTarget();
+						team2.getStats()->incrementGoals();
 						Ball = 0;
 					}
 					else
 					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
+						std::cout << "superb save by the keeper!";
+						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
 				}
 			}
-			else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
+			else if (randNumber > 7 && randNumber < 11)
 			{
 				playerAwayTeam = team2.getAttacker();
-				if (longOrShortShoot == 0) // Long Shot deffender + goalkeeper
+				if (longOrShortShoot == 0) // gk with deffender "long shoot"
 				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongShot() /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-							+ playerHomeTeam->getPositionStats()->getSprintSpeed())) > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getVision())) //attacker vs attacker
 					{
+						team1.getStats()->incrementShotsOnTarget();
 						playerHomeTeam = team1.getGKPlayer();
-						if (0.5 * (playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getLongPass() /
-							playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getReflexes() +
-							playerHomeTeam->getPositionStats()->getGKHandling()) > ChanceOfSuccess())
+						if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+							playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 						{
-							std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << " deffender and goalkeeper are watching stressed!" << std::endl;
-							team2.getStats()->incrementGoals();
+							std::cout << "GOALLLL!!!! HOME Defender scores by long shoot!";
 							team2.getStats()->incrementShotsOnTarget();
+							team2.getStats()->incrementGoals();
 							Ball = 0;
 						}
 						else
 						{
-							std::cout << "Save by goalKeeper!";
+							std::cout << "superb save by the keeper!";
 							team2.getStats()->incrementShotsOnTarget();
-							Ball = 0;
+							Ball = 1;
 						}
 					}
 					else
 					{
-						std::cout << "Far away from goal!";
+						std::cout << "That was far away from goal! I think he hit the plane!";
 						team2.getStats()->incrementShotOffTarget();
 						Ball = 0;
 					}
 				}
-				else if (longOrShortShoot == 1) //Short Shot only GoalKeeper
+				else
 				{
-					playerHomeTeam = team1.getGKPlayer();
-					if (0.5 * ((playerAwayTeam->getPositionStats()->getFinishing() + playerAwayTeam->getPositionStats()->getShotPower() + playerAwayTeam->getPositionStats()->getBallControll()) /
-						(playerHomeTeam->getPositionStats()->getGKPossitioning() + playerHomeTeam->getPositionStats()->getGKHandling() + playerHomeTeam->getPositionStats()->getReflexes()) > ChanceOfSuccess()))
+					playerAwayTeam = team2.getGKPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getFinishing(), playerAwayTeam->getPositionStats()->getShotPower(), playerAwayTeam->getPositionStats()->getLongShot(),
+						playerHomeTeam->getPositionStats()->getGKPossitioning(), playerHomeTeam->getPositionStats()->getReflexes(), playerHomeTeam->getPositionStats()->getGKHandling()))
 					{
-						std::cout << "Goal!!!!! Incredible shoot by attacker: " << playerAwayTeam->getLastName() << std::endl;
+						std::cout << "GOALLLL!!!! HOME Defender scores by short shoot!";
+						team2.getStats()->incrementShotsOnTarget();
 						team2.getStats()->incrementGoals();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "superb save by the keeper!";
 						team2.getStats()->incrementShotsOnTarget();
 						Ball = 0;
 					}
-					else
-					{
-						std::cout << "What a miss!";
-						team2.getStats()->incrementShotOffTarget();
-						Ball = 0;
-					}
 				}
 			}
+			break;
 		}
-		break;
-	default:
-		break;
 	}
-	return 0;
 }
-unsigned short CActions::Pass(CTeam& team1, CTeam& team2)
+
+void CActions::Pass(CTeam& team1, CTeam& team2)
 {
 	unsigned short positionOfBall = PositionOfBall();
 	randNumber = randNumGenerator(10); // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
-	switch (Ball)
+	if (Ball == 0)
 	{
-	case 0: //team 1 passing
-		if (positionOfBall == 1) // def team deffenders
+		switch (positionOfBall)
 		{
-			playerAwayTeam = team2.getDeffenderPlayer();
-			if (randNumber > 1 && randNumber < 5) //deffneder vs deffender
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs deff
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //deffender vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 2) // def team middfilders
-		{
-			playerAwayTeam = team2.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) //deffender vs mid
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //attacker vs mid
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerAwayTeam = team2.getAttacker();
-			if (randNumber > 1 && randNumber < 5) //deffender vs attacker
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs attacker
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //attacker vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getLongPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getVision() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						Ball = 0;
-						team1.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team2.getStats()->incrementTackles();
-					}
-				}
-			}
-		}
-		break;
-	case 1: //team 2 passsing
-		if (positionOfBall == 1) // def team deffenders
-		{
-			playerAwayTeam = team2.getDeffenderPlayer();
-			if (randNumber > 1 && randNumber < 5) //deffneder vs deffender
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs deff
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //deffender vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 2) // def team middfilders
-		{
-			playerAwayTeam = team2.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) //deffender vs mid
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						Ball = 0;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 1;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //attacker vs mid
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerAwayTeam = team2.getAttacker();
-			if (randNumber > 1 && randNumber < 5) //deffender vs attacker
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by deffenderhe just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs attacker
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Middfilder he just made deffenders look stupid!";
-						Ball = 1;
-						team2.getStats()->incrementPasses();
-					}
-					else
-					{
-						Ball = 0;
-						team1.getStats()->incrementTackles();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Middfilder he just made deffenders look stupid!";
-						team2.getStats()->incrementPasses();
-					}
-				}
-			}
-			else if (randNumber > 7 && randNumber > 11) //attacker vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (LongOrShort() == 0) //long pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getLongPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice long pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team1.getStats()->incrementTackles();
-					}
-					else
-					{
-						Ball = 0;
-						team2.getStats()->incrementPasses();
-					}
-				}
-				else if (LongOrShort() == 1) //short pass
-				{
-					if (0.5 * (playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getVision() + playerAwayTeam->getPositionStats()->getStrength()) /
-						(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength()))
-					{
-						std::cout << "Nice short pass by Attacker he just made deffenders look stupid!";
-						Ball = 1;
-						team1.getStats()->incrementTackles();
-					}
-					else
-					{
-						Ball = 0;
-						team2.getStats()->incrementPasses();
-					}
-				}
-			}
-		}
-		break;
-	default:
-		break;
-	}
-	return 0;
-}
-unsigned short CActions::Dribble(CTeam& team1, CTeam& team2)
-{
-	unsigned short positionOfBall = PositionOfBall();
-	randNumber = randNumGenerator(10); // choosing a player
-	CPlayer* playerHomeTeam = nullptr;
-	CPlayer* playerAwayTeam = nullptr;
-	switch (Ball)
-	{
-	case 0:
-		//dribble
-		if (positionOfBall == 1)
-		{
-			playerAwayTeam = team2.getDeffenderPlayer();
-			// deffender vs deffenders
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() +
-						playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
-				}
-			}
-			//Mid vs deffenders
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				//CM
-				playerHomeTeam = team1.getMidPlayer();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
-				}
-			}
-			else if (randNumber > 7 && randNumber < 10)
-			{
-				//Att vs deffender
-				playerHomeTeam = team1.getAttacker();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by middfilder!: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
-				}
-			}
-			else if (randNumber == 0)
-			{
-
-				//GK
-			}
-		}
-		else if (positionOfBall == 2)
-			// mid side away team
-		{
-			playerAwayTeam = team2.getMidPlayer();
-			//deffender vs mid
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-			}
-			//mid vs mid
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by Midfilder: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-				//CM
-			}
-			//attackers vs mid
-			else if (randNumber > 7 && randNumber < 10)
-			{
-				playerHomeTeam = team1.getAttacker();
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-				//Att
-			}
-			else if (randNumber == 0)
-			{
-				//GK
-			}
-		}
-		else if (positionOfBall == 3)
-			//attack side away team
-		{
-			playerAwayTeam = team2.getAttacker();
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				playerHomeTeam = team1.getMidPlayer();
-
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-				//CM
-			}
-			else if (randNumber > 7 && randNumber < 10)
-			{
-				playerHomeTeam = team1.getAttacker();
-
-				if ((0.5 * (playerHomeTeam->getPositionStats()->getDribbling() + playerHomeTeam->getPositionStats()->getBallControll() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getSlideTackle() + playerAwayTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 0;
-				}
-				else
-				{
-					Ball = 1;
-				}
-				//Att
-			}
-			else if (randNumber == 0)
-			{
-				//GK
-			}
-		}
-		break;
-	case 1:
-		//dribble
-		if (positionOfBall == 1)
-		{
-			playerHomeTeam = team1.getDeffenderPlayer();
-			// deffender vs deffenders
-			if (randNumber > 1 && randNumber < 5)
-			{
+			case 1: // deffenders
 				playerAwayTeam = team2.getDeffenderPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
+				if (LongOrShort() == 0)
 				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
+					if (randNumber > 0 && randNumber < 5) //deffender vs deffender
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength())) 
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else 
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs deffender
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs deffender
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
-				else
+				else 
 				{
-					Ball = 0;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
+					if (randNumber > 0 && randNumber < 5) //deffender vs deffender
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs deffender
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs deffender
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
-			}
-			//Mid vs deffenders
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				//CM
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
-				}
-			}
-			else if (randNumber > 7 && randNumber < 10)
-			{
-				//Att vs deffender
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by middfilder!: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-					std::cout << "Great tackle by deffender";
-					team1.getStats()->incrementTackles();
-				}
-			}
-			else if (randNumber == 0)
-			{
-
-				//GK
-			}
-		}
-		else if (positionOfBall == 2)
-			// mid side away team
-		{
-			playerHomeTeam = team1.getDeffenderPlayer();
-			//deffender vs mid
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-				}
-			}
-			//mid vs mid
-			else if (randNumber > 4 && randNumber < 8)
-			{
+				break;
+			case 2://midfielders
 				playerAwayTeam = team2.getMidPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
+				if (LongOrShort() == 0)
 				{
-					std::cout << "Wonderful dribble by Midfilder: " << playerHomeTeam->getLastName();
-					Ball = 1;
+					if (randNumber > 0 && randNumber < 5) //deffender vs midfielders
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs midfielders
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs midfielders
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
 				else
 				{
-					Ball = 0;
+					if (randNumber > 0 && randNumber < 5) //deffender vs midfielders
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs midfielders
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs midfielders
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
-				//CM
-			}
-			//attackers vs mid
-			else if (randNumber > 7 && randNumber < 10)
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-				}
-				//Att
-			}
-			else if (randNumber == 0)
-			{
-				//GK
-			}
-		}
-		else if (positionOfBall == 3)
-			//attack side away team
-		{
-			playerHomeTeam = team1.getAttacker();
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8)
-			{
-				playerAwayTeam = team2.getMidPlayer();
-
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
-				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
-				}
-				else
-				{
-					Ball = 0;
-				}
-				//CM
-			}
-			else if (randNumber > 7 && randNumber < 10)
-			{
+				break;
+			case 3 : //attackers
 				playerAwayTeam = team2.getAttacker();
-
-				if ((0.5 * (playerAwayTeam->getPositionStats()->getDribbling() + playerAwayTeam->getPositionStats()->getBallControll() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getSlideTackle() + playerHomeTeam->getPositionStats()->getStrength())) > ChanceOfSuccess())
+				if (LongOrShort() == 0)
 				{
-					std::cout << "Wonderful dribble by deffender: " << playerHomeTeam->getLastName();
-					Ball = 1;
+					if (randNumber > 0 && randNumber < 5) //deffender vs attacker
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs attacker
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getLongPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
 				else
 				{
-					Ball = 0;
+					if (randNumber > 0 && randNumber < 5) //deffender vs attacker
+					{
+						playerHomeTeam = team1.getDeffenderPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 4 && randNumber < 8)// mid vs attacker
+					{
+						playerHomeTeam = team1.getMidPlayer();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by midfielder!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
+					else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
+					{
+						playerHomeTeam = team1.getAttacker();
+						if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getStrength(),
+							playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							std::cout << "Incredible long pass by attacker!";
+							team1.getStats()->incrementPasses();
+							Ball = 0;
+						}
+						else
+						{
+							std::cout << "Bad pass that was nice tackle!";
+							team2.getStats()->incrementTackles();
+							Ball = 1;
+						}
+					}
 				}
-				//Att
-			}
-			else if (randNumber == 0)
-			{
-				//GK
-			}
+				break;
 		}
-		break;
-	default:
-		break;
 	}
-	return 0;
-}
-unsigned short CActions::Crossing(CTeam& team1, CTeam& team2)
-{
-	unsigned short positionOfBall = PositionOfBall();
-	randNumber = randNumGenerator(10); // choosing a player
-	CPlayer* playerHomeTeam = nullptr;
-	CPlayer* playerAwayTeam = nullptr;
-
-	switch (Ball)
+	else if (Ball == 1)
 	{
-	case 0:
-		if (positionOfBall == 1)
+		switch (positionOfBall)
 		{
-			playerAwayTeam = team2.getDeffenderPlayer();
-			// deffender vs deffenders
-			if (randNumber > 1 && randNumber < 5) // deffender vs deffender
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home deffender! over away deffender";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home deffender great work for away deffender";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs deffender
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home midfielder! over away deffender";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home midfilder great work for away deffender";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 9 && randNumber < 11) // attacker vs deffender
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home attacker! over away deffender";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home attacker great work for away deffender";
-					Ball = 1;
-				}
-			}
-		}
-		else if (positionOfBall == 2)
-		{
-			playerAwayTeam = team2.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) // deffnder vs mid
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home Deffender over away midfielder!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home deffender great work by away midfielder!";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home midfielder over away midfielder!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home midfielder great work by away midfielder!";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 9 && randNumber < 11) //attacker vs mid
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home attacker over away midfielder!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home attacker great work by away midfielder!";
-					Ball = 1;
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerAwayTeam = team2.getAttacker();
-			if (randNumber > 1 && randNumber < 5) // deffender vs attacker
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home Deffender over away midfielder!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home deffender great work by away midfielder!";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) //mid vs attacker
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home midfielder over away attacker!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home midfielder great work by away attacker!";
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 9 && randNumber < 11) // attacker vs attacker
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getStrength() + playerHomeTeam->getPositionStats()->getCrossing() + playerHomeTeam->getPositionStats()->getVision() /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getVision()
-						+ playerAwayTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by home attacker over away attacker!";
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by home deffender great work by away attacker";
-					Ball = 1;
-				}
-			}
-		}
-		break;
-	case 1:
-		if (positionOfBall == 1)
-		{
+		case 1: // deffenders
 			playerHomeTeam = team1.getDeffenderPlayer();
-			// deffender vs deffenders
-			if (randNumber > 1 && randNumber < 5) // deffender vs deffender
+			if (LongOrShort() == 0)
 			{
-				playerAwayTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
+				if (randNumber > 0 && randNumber < 5) //deffender vs deffender
 				{
-					std::cout << "Nice cross by away deffender! over home deffender";
-					Ball = 1;
+					playerAwayTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
-				else
+				else if (randNumber > 4 && randNumber < 8)// mid vs deffender
 				{
-					std::cout << "It wasnt best cross by away deffender great work for home deffender";
-					Ball = 0;
+					playerAwayTeam = team2.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs deffender
+				{
+					playerAwayTeam = team2.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs deffender
+			else
 			{
-				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
+				if (randNumber > 0 && randNumber < 5) //deffender vs deffender
 				{
-					std::cout << "Nice cross by away midfielder! over home deffender";
-					Ball = 1;
+					playerAwayTeam = team2.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
-				else
+				else if (randNumber > 4 && randNumber < 8)// mid vs deffender
 				{
-					std::cout << "It wasnt best cross by away midfilder great work for home deffender";
-					Ball = 0;
+					playerAwayTeam = team2.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs deffender
+				{
+					playerAwayTeam = team2.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
 			}
-			else if (randNumber > 9 && randNumber < 11) // attacker vs deffender
-			{
-				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by away attacker! over home deffender";
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by away attacker great work for home deffender";
-					Ball = 0;
-				}
-			}
-		}
-		else if (positionOfBall == 2)
-		{
+			break;
+		case 2://midfielders
 			playerHomeTeam = team1.getMidPlayer();
-			if (randNumber > 1 && randNumber < 5) // deffnder vs mid
+			if (LongOrShort() == 0)
 			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
+				if (randNumber > 0 && randNumber < 5) //deffender vs midfielders
 				{
-					std::cout << "Nice cross by away Deffender over home midfielder!";
-					Ball = 1;
+					playerAwayTeam = team2.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
-				else
+				else if (randNumber > 4 && randNumber < 8)// mid vs midfielders
 				{
-					std::cout << "It wasnt best cross by away deffender great work by home midfielder!";
-					Ball = 0;
+					playerAwayTeam = team2.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs midfielders
+				{
+					playerAwayTeam = team2.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // mid vs mid
+			else
 			{
-				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
+				if (randNumber > 0 && randNumber < 5) //deffender vs midfielders
 				{
-					std::cout << "Nice cross by away midfielder over home midfielder!";
-					Ball = 1;
+					playerAwayTeam = team2.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
 				}
-				else
+				else if (randNumber > 4 && randNumber < 8)// mid vs midfielders
 				{
-					std::cout << "It wasnt best cross by away midfielder great work by home midfielder!";
-					Ball = 0;
+					playerAwayTeam = team2.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs midfielders
+				{
+					playerAwayTeam = team2.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
 			}
-			else if (randNumber > 9 && randNumber < 11) //attacker vs mid
+			break;
+		case 3: //attackers
+			playerHomeTeam = team2.getAttacker();
+			if (LongOrShort() == 0)
 			{
-				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
+				if (randNumber > 0 && randNumber < 5) //deffender vs attacker
 				{
-					std::cout << "Nice cross by away attacker over home midfielder!";
-					Ball = 1;
+					playerAwayTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
-				else
+				else if (randNumber > 4 && randNumber < 8)// mid vs attacker
 				{
-					std::cout << "It wasnt best cross by away attacker great work by home midfielder!";
-					Ball = 0;
+					playerAwayTeam = team2.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
+				{
+					playerAwayTeam = team2.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getLongPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
 				}
 			}
+			else
+			{
+				if (randNumber > 0 && randNumber < 5) //deffender vs attacker
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)// mid vs attacker
+				{
+					playerAwayTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by midfielder!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11) //attacker vs attacker
+				{
+					playerAwayTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Incredible long pass by attacker!";
+						team2.getStats()->incrementPasses();
+						Ball = 1;
+					}
+					else
+					{
+						std::cout << "Bad pass that was nice tackle!";
+						team1.getStats()->incrementTackles();
+						Ball = 0;
+					}
+				}
+			}
+			break;
 		}
-		else if (positionOfBall == 3)
-		{
-			playerHomeTeam = team1.getAttacker();
-			if (randNumber > 1 && randNumber < 5) // deffender vs attacker
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by away Deffender over home midfielder!";
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by away deffender great work by home midfielder!";
-					Ball = 0;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) //mid vs attacker
-			{
-				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by away midfielder over home attacker!";
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by away midfielder great work by home attacker!";
-					Ball = 0;
-				}
-			}
-			else if (randNumber > 9 && randNumber < 11) // attacker vs attacker
-			{
-				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getStrength() + playerAwayTeam->getPositionStats()->getCrossing() + playerAwayTeam->getPositionStats()->getVision() /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getVision()
-						+ playerHomeTeam->getPositionStats()->getSlideTackle())) > ChanceOfSuccess())
-				{
-					std::cout << "Nice cross by away attacker over home attacker!";
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "It wasnt best cross by away deffender great work by home attacker";
-					Ball = 0;
-				}
-			}
-		}
-		break;
-	default:
-		break;
 	}
-	return 0;
+
 }
-unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
+
+void CActions::Dribble(CTeam& team1, CTeam& team2)
+{
+	unsigned short positionOfBall = PositionOfBall();
+	randNumber = randNumGenerator(10); // choosing a player
+	CPlayer* playerHomeTeam = nullptr;
+	CPlayer* playerAwayTeam = nullptr;
+	if (Ball = 0)
+	{
+		switch (positionOfBall)
+		{
+
+		case 1:// deffender
+			playerAwayTeam = team2.getDeffenderPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber >8 && randNumber < 11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			break;
+		case 2:// mid
+			playerAwayTeam = team2.getMidPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 8 && randNumber < 11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			break;
+		case 3:
+			playerAwayTeam = team2.getAttacker();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerHomeTeam = team1.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerHomeTeam = team1.getMidPlayer();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 8 && randNumber < 11)
+			{
+				playerHomeTeam = team1.getAttacker();
+				if (!simulateAlgorithm(playerHomeTeam->getPositionStats()->getDribbling(), playerHomeTeam->getPositionStats()->getBallControll(), playerHomeTeam->getPositionStats()->getStrength(),
+					playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getSlideTackle(), playerAwayTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			break;
+		}
+	}
+	else 
+	{
+		switch (positionOfBall)
+		{
+		case 1:// deffender
+			playerHomeTeam = team1.getDeffenderPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			else if (randNumber > 8 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team2.getStats()->incrementTackles();
+					Ball = 1;
+				}
+			}
+			break;
+		case 2:// mid
+			playerHomeTeam = team2.getMidPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 8 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		case 3:
+			playerHomeTeam = team1.getAttacker();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 7)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 8 && randNumber < 11)
+			{
+				playerAwayTeam = team1.getAttacker();
+				if (!simulateAlgorithm(playerAwayTeam->getPositionStats()->getDribbling(), playerAwayTeam->getPositionStats()->getBallControll(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getSlideTackle(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		}
+	}
+}
+
+void CActions::Crossing(CTeam& team1, CTeam& team2)
+{
+	unsigned short positionOfBall = PositionOfBall();
+	randNumber = randNumGenerator(10); // choosing a player
+	CPlayer* playerHomeTeam = nullptr;
+	CPlayer* playerAwayTeam = nullptr;
+	if (Ball == 0)
+	{
+		switch (positionOfBall)
+		{
+			case 1:
+					playerAwayTeam = team2.getDeffenderPlayer();
+				if (randNumber > 0 && randNumber < 5)
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else 
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11)
+				{
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				break;
+			case 2:
+				playerAwayTeam = team2.getMidPlayer();
+				if (randNumber > 0 && randNumber < 5)
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11)
+				{
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				break;
+			case 3:
+				playerAwayTeam = team2.getAttacker();
+				if (randNumber > 0 && randNumber < 5)
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11)
+				{
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getStrength(), playerHomeTeam->getPositionStats()->getCrossing(), playerHomeTeam->getPositionStats()->getVision(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getVision(), playerAwayTeam->getPositionStats()->getSlideTackle()))
+					{
+						std::cout << "Nice cross!";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						std::cout << "bad cross!";
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				break;
+		}
+	}
+	else 
+	{
+		switch (positionOfBall)
+		{
+		case 1:
+			playerHomeTeam = team1.getDeffenderPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		case 2:
+			playerHomeTeam = team1.getMidPlayer();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		case 3:
+			playerHomeTeam = team1.getAttacker();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getStrength(), playerAwayTeam->getPositionStats()->getCrossing(), playerAwayTeam->getPositionStats()->getVision(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getVision(), playerHomeTeam->getPositionStats()->getSlideTackle()))
+				{
+					std::cout << "Nice cross!";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					std::cout << "bad cross!";
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		}
+	}
+}
+
+void CActions::Heading(CTeam& team1, CTeam& team2)
 {
 	unsigned short positionOfBall = PositionOfBall();
 	randNumber = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
 	CPlayer* playerAwayTeam = nullptr;
-	switch (Ball)
+	if (Ball == 0)
 	{
-	case 0:
-		if (positionOfBall == 1) //deffender side
+		switch (positionOfBall)
 		{
-			playerAwayTeam = team2.getDeffenderPlayer(); //deffender vs deffender
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+			case 1:
+			playerAwayTeam = team2.getDeffenderPlayer();
+				if (randNumber > 0 && randNumber < 5)
 				{
-					std::cout << "Nice header by home deffnder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs deffender
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home midfielder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs deffender
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home Attacker";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by Attacker and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-		}
-		else if (positionOfBall == 2)
-		{
-			playerAwayTeam = team2.getMidPlayer(); //deffender vs midfielder
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home deffnder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs midfielder
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home midfielder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs midfielder
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home Attacker";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerAwayTeam = team2.getDeffenderPlayer(); //deffender vs deffender
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerHomeTeam = team1.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home deffnder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs deffender
-			{
-				playerHomeTeam = team1.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home midfielder and pass";
-					team1.getStats()->incrementPasses();
-					Ball = 0;
-				}
-				else
-				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
-					team2.getStats()->incrementTackles();
-					Ball = 1;
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs deffender
-			{
-				playerHomeTeam = team1.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home Attacker have to beat and goalkeeper!!!";
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning()) + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes() > ChanceOfSuccess())
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
 					{
-						std::cout << "What a incredible header by home attacker and this is goal!!!!";
-						team1.getStats()->incrementGoals();
-						team1.getStats()->incrementShotsOnTarget();
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
 						Ball = 1;
 					}
-					else {
-						std::cout << "What a save!!!";
-						team1.getStats()->incrementShotsOnTarget();
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
 						Ball = 1;
 					}
 				}
-				else
+				else if (randNumber > 7 && randNumber < 11)
 				{
-					std::cout << "Poor heading by attacker and this is chance for away team!";
-					team1.getStats()->incrementShotOffTarget();
-
-					Ball = 1;
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
 				}
-			}
+				break;
+			case 2:
+				playerAwayTeam = team2.getMidPlayer();
+				if (randNumber > 0 && randNumber < 5)
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11)
+				{
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				break;
+			case 3:
+				playerAwayTeam = team2.getAttacker();
+				if (randNumber > 0 && randNumber < 5)
+				{
+					playerHomeTeam = team1.getDeffenderPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 4 && randNumber < 8)
+				{
+					playerHomeTeam = team1.getMidPlayer();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						std::cout << "Nice header by home deffnder and pass";
+						team1.getStats()->incrementPasses();
+						Ball = 0;
+					}
+					else 
+					{
+						team2.getStats()->incrementTackles();
+						Ball = 1;
+					}
+				}
+				else if (randNumber > 7 && randNumber < 11)
+				{
+					playerHomeTeam = team1.getAttacker();
+					if (simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+					{
+						playerAwayTeam = team2.getGKPlayer();
+						team1.getStats()->incrementShotsOnTarget();
+						if(simulateAlgorithm(playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getShortPass(), playerHomeTeam->getPositionStats()->getStrength(),
+						playerAwayTeam->getPositionStats()->getStandTackle(), playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getStrength()))
+						{
+							team1.getStats()->incrementGoals();
+							Ball = 1;
+						}
+					}
+					else 
+					{
+						team1.getStats()->incrementShotOffTarget();
+						Ball = 1;
+					}
+				}
+				break;
 		}
-		break;
-	case 1:
-		if (positionOfBall == 1) //deffender side
+	}
+	else 
+	{
+		switch (positionOfBall)
 		{
-			playerHomeTeam = team1.getDeffenderPlayer(); //deffender vs deffender
-			if (randNumber > 1 && randNumber < 5)
+		case 1:
+			playerHomeTeam = team1.getDeffenderPlayer();
+			if (randNumber > 0 && randNumber < 5)
 			{
 				playerAwayTeam = team2.getDeffenderPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 				{
 					std::cout << "Nice header by home deffnder and pass";
 					team2.getStats()->incrementPasses();
@@ -2544,54 +2415,15 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 				}
 				else
 				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
 					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs deffender
+			else if (randNumber > 4 && randNumber < 8)
 			{
 				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home midfielder and pass";
-					team2.getStats()->incrementPasses();
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
-					team1.getStats()->incrementTackles();
-					Ball = 0;
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs deffender
-			{
-				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home Attacker";
-					team2.getStats()->incrementPasses();
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team1.getStats()->incrementTackles();
-					Ball = 0;
-				}
-			}
-		}
-		else if (positionOfBall == 2)
-		{
-			playerHomeTeam = team1.getMidPlayer(); //deffender vs midfielder
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 				{
 					std::cout << "Nice header by home deffnder and pass";
 					team2.getStats()->incrementPasses();
@@ -2599,54 +2431,15 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 				}
 				else
 				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
 					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs midfielder
-			{
-				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home midfielder and pass";
-					team2.getStats()->incrementPasses();
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
-					team1.getStats()->incrementTackles();
-					Ball = 0;
-				}
-			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs midfielder
+			else if (randNumber > 7 && randNumber < 11)
 			{
 				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getShortPass() + playerAwayTeam->getPositionStats()->getStrength()) /
-					(playerHomeTeam->getPositionStats()->getStandTackle() + playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
-				{
-					std::cout << "Nice header by home Attacker";
-					team2.getStats()->incrementPasses();
-					Ball = 1;
-				}
-				else
-				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
-					team1.getStats()->incrementTackles();
-					Ball = 0;
-				}
-			}
-		}
-		else if (positionOfBall == 3)
-		{
-			playerHomeTeam = team2.getAttacker(); //Attacker vs deffender
-			if (randNumber > 1 && randNumber < 5)
-			{
-				playerAwayTeam = team2.getDeffenderPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 				{
 					std::cout << "Nice header by home deffnder and pass";
 					team2.getStats()->incrementPasses();
@@ -2654,67 +2447,125 @@ unsigned short CActions::Heading(CTeam& team1, CTeam& team2)
 				}
 				else
 				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
 					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
-			else if (randNumber > 4 && randNumber < 8) // midfielder vs deffender
+			break;
+		case 2:
+			playerHomeTeam = team1.getMidPlayer();
+			if (randNumber > 0 && randNumber < 5)
 			{
-				playerAwayTeam = team2.getMidPlayer();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+				playerAwayTeam = team2.getDeffenderPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 				{
-					std::cout << "Nice header by home midfielder and pass";
+					std::cout << "Nice header by home deffnder and pass";
 					team2.getStats()->incrementPasses();
 					Ball = 1;
 				}
 				else
 				{
-					std::cout << "Poor heading by midfielder and this is chance for away team!";
 					team1.getStats()->incrementTackles();
 					Ball = 0;
 				}
 			}
-			else if (randNumber > 7 && randNumber < 11) // attacker vs deffender
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
 			{
 				playerAwayTeam = team2.getAttacker();
-				if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-					(playerAwayTeam->getPositionStats()->getStandTackle() + playerAwayTeam->getPositionStats()->getHeading() + playerAwayTeam->getPositionStats()->getStrength()) > ChanceOfSuccess())
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 				{
-					std::cout << "Nice header by home Attacker have to beat and goalkeeper!!!";
+					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			break;
+		case 3:
+			playerHomeTeam = team1.getAttacker();
+			if (randNumber > 0 && randNumber < 5)
+			{
+				playerAwayTeam = team1.getDeffenderPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 4 && randNumber < 8)
+			{
+				playerAwayTeam = team2.getMidPlayer();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					std::cout << "Nice header by home deffnder and pass";
+					team2.getStats()->incrementPasses();
+					Ball = 1;
+				}
+				else
+				{
+					team1.getStats()->incrementTackles();
+					Ball = 0;
+				}
+			}
+			else if (randNumber > 7 && randNumber < 11)
+			{
+				playerAwayTeam = team2.getAttacker();
+				if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+					playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
+				{
+					playerHomeTeam = team1.getGKPlayer();
 					team2.getStats()->incrementShotsOnTarget();
-					playerAwayTeam = team2.getGKPlayer();
-					if (0.5 * (playerHomeTeam->getPositionStats()->getHeading() + playerHomeTeam->getPositionStats()->getShortPass() + playerHomeTeam->getPositionStats()->getStrength()) /
-						(playerAwayTeam->getPositionStats()->getGKPossitioning()) + playerAwayTeam->getPositionStats()->getGKHandling() + playerAwayTeam->getPositionStats()->getReflexes() > ChanceOfSuccess())
+					if (simulateAlgorithm(playerAwayTeam->getPositionStats()->getHeading(), playerAwayTeam->getPositionStats()->getShortPass(), playerAwayTeam->getPositionStats()->getStrength(),
+						playerHomeTeam->getPositionStats()->getStandTackle(), playerHomeTeam->getPositionStats()->getHeading(), playerHomeTeam->getPositionStats()->getStrength()))
 					{
-						std::cout << "What a incredible header by home attacker and this is goal!!!!";
 						team2.getStats()->incrementGoals();
 						Ball = 0;
 					}
-					else {
-						std::cout << "What a save!!!";
-						
-						Ball = 0;
-					}
 				}
 				else
 				{
-					std::cout << "Poor heading by deffender and this is chance for away team!";
 					team2.getStats()->incrementShotOffTarget();
 					Ball = 0;
 				}
 			}
+			break;
 		}
-		break;
-	default:
-		break;
 	}
-	return 0;
 }
+
 //TODO
 // оправи ball като се загуби топката
-unsigned short CActions::YellowCard(CTeam& team1, CTeam& team2)
+void CActions::YellowCard(CTeam& team1, CTeam& team2)
 {
 	randNumber = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
@@ -2730,9 +2581,8 @@ unsigned short CActions::YellowCard(CTeam& team1, CTeam& team2)
 	default:
 		break;
 	}
-	return 0;
 }
-unsigned short CActions::RedCard(CTeam& team1, CTeam& team2)
+void CActions::RedCard(CTeam& team1, CTeam& team2)
 {
 	randNumber = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
@@ -2748,9 +2598,8 @@ unsigned short CActions::RedCard(CTeam& team1, CTeam& team2)
 	default:
 		break;
 	}
-	return 0;
 }
-unsigned short CActions::Penalty(CTeam& team1, CTeam& team2)
+void CActions::Penalty(CTeam& team1, CTeam& team2)
 {
 	randNumber = rand() % 10 + 0; // choosing a player
 	CPlayer* playerHomeTeam = nullptr;
@@ -2766,5 +2615,4 @@ unsigned short CActions::Penalty(CTeam& team1, CTeam& team2)
 	default:
 		break;
 	}
-	return 0;
 }

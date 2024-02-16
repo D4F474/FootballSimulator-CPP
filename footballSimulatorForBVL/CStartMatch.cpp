@@ -12,26 +12,26 @@ CStartMatch::CStartMatch(CTeam*& team1, CTeam*& team2)
 void CStartMatch::FirstWhistle(CTeam*& team1, CTeam*& team2)
 {
 	ballForTeam();
-	while (true)
+	while (minute < 90)
 	{
 		system("CLS");
 		//shoot pass dribble crossing, heading, yellowcard,redcard,penalty
-		switch (randNumGenerator(4))
+		switch (randNumGenerator(8))
 		{
 			case 0:
-				Shoot(*team1, *team2);
+				randNumGenerator(100) <= 30 ? Shoot(*team1, *team2) : Pass(*team1, *team2);
 				break;
 			case 1:
 				Pass(*team1, *team2);
 				break;
 			case 2:
-				Dribble(*team1, *team2);
+				randNumGenerator(100) <= 50 ? Dribble(*team1, *team2) : Pass(*team1, *team2);
 				break;
 			case 3:
-				Crossing(*team1, *team2);
+				randNumGenerator(100) <= 40 ? Crossing(*team1, *team2) : Pass(*team1, *team2);
 				break;
 			case 4:
-				Heading(*team1, *team2);
+				randNumGenerator(100) <= 40 ? Heading(*team1, *team2) : Pass(*team1, *team2);
 				break;
 			case 5:
 				YellowCard(*team1, *team2);
@@ -43,11 +43,12 @@ void CStartMatch::FirstWhistle(CTeam*& team1, CTeam*& team2)
 				Penalty(*team1, *team2);
 				break;
 		}
-		if (minute == 90) 
+		seconds += 30;
+		if (seconds == 60)
 		{
-			break;
+			seconds = 0;
+			minute++;
 		}
-		minute++;
 	}
 	system("CLS");
 	std::cout << team1->getTeamName() << "              -         " << team2->getTeamName() << std::endl;

@@ -8,7 +8,7 @@
 #include "CPlayer.h"
 #include "CStartMatch.h"
 
-const unsigned short MAIN_MENU_OPTIONS = 2;
+const unsigned short MAIN_MENU_OPTIONS = 4;
 
 
 void readFile(std::vector<CTeam*>& teams);
@@ -40,6 +40,7 @@ int main()
 			system("CLS");
 			startMatch(teams);
 			system("PAUSE");
+			system("CLS");
 			break;
 		default:
 			std::cout << "Stop program";
